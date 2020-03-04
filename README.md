@@ -1,4 +1,4 @@
-Note: pipeline not completely done yet, but code should be functional
+Note: pipeline not completely done yet, but code should be functional. Uploads of embeddings are coming soon. 
 
 # GEEER
 Code supporting the paper Graph-Embedding Empowered Entity Retrieval
@@ -34,7 +34,7 @@ python Code/entity_score.py embeddingfile outputfile outputfolder
 So for example
 
 ```python
-python Code/entity_score.py srs/WKN-vectors.bin output.txt Outputfolder
+python Code/entity_score.py WKN-vectors.bin output.txt Outputfolder
 ```
 
 To do the coordinate ascent and ranking of these files, please run the following script with the Outputfolder from the previous line:
