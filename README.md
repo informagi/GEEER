@@ -1,3 +1,5 @@
+Note: pipeline not completely done yet, but code should be functional
+
 # GEEER
 Code supporting the paper Graph-Embedding Empowered Entity Retrieval
 
