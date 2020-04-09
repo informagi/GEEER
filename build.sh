@@ -9,13 +9,18 @@ then
     exit 1
 fi
 
+# Downloading Ranklib
 wget -O src/Ranklib.jar https://sourceforge.net/projects/lemur/files/lemur/RankLib-2.11/RankLib-2.11.jar/download
 
+
+# Downloading DBpedia Entity
 git clone https://github.com/iai-group/DBpedia-Entity src/DBpedia-Entity
 
+
+# Downloading the embedding files
 wget -O src/WKN_no_lg_vectors.tar.bz2 https://surfdrive.surf.nl/files/index.php/s/OFipMGvn8zXAHqS/download
-tar -xvjf src/WKN_no_lg_vectors.tar.bz2
+tar -xvjf src/WKN_no_lg_vectors.tar.bz2 -C /src
 
 wget -O src/WKN_vectors.tar.bz2 https://surfdrive.surf.nl/files/index.php/s/V2mc4zrcE46Ucvs/download
-tar -xvjf src/src/WKN_vectors.tar.bz2
+tar -xvjf src/WKN_vectors.tar.bz2 -C /src
 

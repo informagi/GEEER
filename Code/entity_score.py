@@ -9,7 +9,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument("embedding", type=str, help="Path to embedding file")
-parser.add_argument("dbpedia_input", type=str, help="Path to dbpedia file to rerank")
+parser.add_argument("dbpedia_input", nargs = '?', default = "../src/DBpedia-Entity/",  type=str, help="Path to dbpedia file to rerank")
 parser.add_argument("score_output", type=str, help="Path to output of ranklib")
 
 args = parser.parse_args()
