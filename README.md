@@ -13,26 +13,57 @@ This repository is structured in the following way:
 - `Data/` : Contains the linked entities used and the wikipedia redirects used
 - `Runs/` : Contains all the runs used in the paper
 
+## Requirements
+Running the code requires Python 3.
 
-## Usage
+## Quickstart
 
+If one simply wants to download the embeddings, they can be accessed [Here for the ones with graph component](https://surfdrive.surf.nl/files/index.php/s/V2mc4zrcE46Ucvs/download) and [Here for the ones without graph component](https://surfdrive.surf.nl/files/index.php/s/OFipMGvn8zXAHqS/download)
 
-To download all the auxilary files (Ranklib, Trec_eval and the embeddings), please use the following command:
+To download all the auxilary files (Ranklib, DBpedia Entity V2 and the embeddings), please use the following command:
 
 ```bash
-make
+bash build.sh
 ```
 
-Then to run the code to compute the embedding based scores, please run
+To then reproduce the results, first make sure to install all the neccessary packages with:
+
+```bash
+pip install -r requirements.txt
+```
+
+And then run
+
+```bash
+bash Code/reproduce.sh
+```
+
+The results will be stored in the folder /Output
+
+## Code for computing the embedding based score
+
+To compute just the embedding based score, use the following function:
+
+```bash
+python Code/entity_score.py embeddingfile outputfile [pathtodbpedia]
+```
 
 ```python
-python Code/entity_score.py embeddingfile outputfile outputfolder
+python Code/entity_score.py src/WKN_vectors/WKN-vectors.bin output.txt
+```
+
+## Code for scoring with Ranklib
+
+If you want to run Ranklib with 5 folds afterwards, use the following function:
+
+```python
+python Code/entity_score_folds.py embeddingfile outputfile outputfolder [pathtodbpedia]
 ```
 
 So for example
 
 ```python
-python Code/entity_score.py srs/WKN-vectors.bin output.txt Outputfolder
+python Code/entity_score_folds.py src/WKN_vectors/WKN-vectors.bin output.txt Outputfolder
 ```
 
 To do the coordinate ascent and ranking of these files, please run the following script with the Outputfolder from the previous line:

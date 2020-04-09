@@ -14,7 +14,7 @@ parser.add_argument("score_output", type=str, help="Path to output of ranklib")
 
 args = parser.parse_args()
 
-path_to_dbpedia = "DBpedia-Entity/"
+path_to_dbpedia = "../src/DBpedia-Entity/"
 
 
 def entity_converter(word, reverse = False, nospace = True):
