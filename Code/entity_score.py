@@ -9,12 +9,12 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument("embedding", type=str, help="Path to embedding file")
-parser.add_argument("dbpedia_input", nargs = '?', default = "../src/DBpedia-Entity/",  type=str, help="Path to dbpedia file to rerank")
 parser.add_argument("score_output", type=str, help="Path to output of ranklib")
+parser.add_argument("dbpedia_input", nargs = '?', default = "src/DBpedia-Entity/runs/v2/bm25f-ca_v2.run",  type=str, help="Path to dbpedia file to rerank")
 
 args = parser.parse_args()
 
-path_to_dbpedia = "../src/DBpedia-Entity/"
+path_to_dbpedia = "src/DBpedia-Entity/"
 
 
 def entity_converter(word, reverse = False, nospace = True):
@@ -106,7 +106,7 @@ rerank =  pd.read_csv(rerank_path, sep='\s+', names = ['query_id', 'x1', 'tag', 
 model = gensim.models.KeyedVectors.load(args.embedding, mmap='r')
 
 # Loading linked entities
-confidence = pd.read_csv("../Data/linked_tagme.csv")
+confidence = pd.read_csv("Data/linked_tagme.csv")
 
 # Loading auxilary files
 qrels_path = path_to_dbpedia + 'collection/v2/qrels-v2.txt'
@@ -116,8 +116,7 @@ queries = pd.read_csv(queries_path, sep='\t',names = ['query_id', 'query'])
 
 
 # Loading previously computed redirects
-#df = pd.read_csv('/store/usr/gerritse/results_dict/wikipedia_redirect.csv')
-df = pd.read_csv('../Data/wikipedia_redirect.csv')
+df = pd.read_csv('Data/wikipedia_redirect.csv')
 
 redirect_dict = {}
 for index, tags in df.iterrows():

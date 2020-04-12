@@ -48,31 +48,33 @@ To compute just the embedding based score, use the following function:
 python Code/entity_score.py embeddingfile outputfile [pathtodbpedia]
 ```
 
-```python
-python Code/entity_score.py src/WKN_vectors/WKN-vectors.bin output.txt
+```bash
+python Code/entity_score.py src/WKN-vectors/WKN-vectors.bin output.txt src/DBpedia-Entity/runs/v2/bm25f-ca_v2.run
 ```
 
 ## Code for scoring with Ranklib
 
 If you want to run Ranklib with 5 folds afterwards, use the following function:
 
-```python
-python Code/entity_score_folds.py embeddingfile outputfile outputfolder [pathtodbpedia]
+```bash
+python Code/entity_score_folds.py embeddingfile outputfolder outputfile [pathtodbpedia]
 ```
 
 So for example
 
-```python
-python Code/entity_score_folds.py src/WKN_vectors/WKN-vectors.bin output.txt Outputfolder
+```bash
+python Code/entity_score_folds.py src/WKN-vectors/WKN-vectors.bin Outputfolder output.txt src/DBpedia-Entity/runs/v2/bm25f-ca_v2.run
 ```
 
 To do the coordinate ascent and ranking of these files, please run the following script with the Outputfolder from the previous line:
 
 ```bash
-Code/rankscore.sh Outputfolder
+bash Code/train_ranklib.sh Outputfolder
+
+bash Code/score_ranklib.sh Outputfolder
 ```
 
-This will result in the ranking and the trec_eval scores of the ranking. 
+The first script will train Ranklib, and the second script will score according to Ranklib and will result in the ranking and the trec_eval scores of the ranking. 
 
 
 ## Cite
