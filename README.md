@@ -16,7 +16,7 @@ This repository is structured in the following way:
 ## Requirements
 Running the code requires Python 3.
 
-## Quickstart
+## Embeddings
 
 If one simply wants to download the embeddings, they can be accessed:
 
@@ -32,6 +32,17 @@ and [Wikipedia2vec embeddings without graph component](https://surfdrive.surf.nl
 ```bash
 wikipedia2vec train --min-entity-count 0 --disambi --no-link-graph enwiki-20190701-pages-articles-multistream.xml.bz2 wikipedia2vec_trained 
 ```
+
+The embeddings can then be loaded in Python with Gensim:
+
+
+```Python
+import gensim
+model = gensim.models.KeyedVectors.load(WKN-vectors.bin, mmap='r')
+```
+
+
+# Quickstart
 
 To download all the auxilary files (Ranklib, DBpedia Entity V2 and the embeddings), please use the following command:
 
