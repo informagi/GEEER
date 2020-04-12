@@ -18,7 +18,20 @@ Running the code requires Python 3.
 
 ## Quickstart
 
-If one simply wants to download the embeddings, they can be accessed [Here for the ones with graph component](https://surfdrive.surf.nl/files/index.php/s/V2mc4zrcE46Ucvs/download) and [Here for the ones without graph component](https://surfdrive.surf.nl/files/index.php/s/OFipMGvn8zXAHqS/download)
+If one simply wants to download the embeddings, they can be accessed:
+
+[Wikipedia2vec embeddings with graph component](https://surfdrive.surf.nl/files/index.php/s/V2mc4zrcE46Ucvs/download), result of the following command:
+
+```bash
+wikipedia2vec train --min-entity-count 0 --disambi enwiki-20190701-pages-articles-multistream.xml.bz2 wikipedia2vec_trained 
+```
+
+
+and [Wikipedia2vec embeddings without graph component](https://surfdrive.surf.nl/files/index.php/s/OFipMGvn8zXAHqS/download)
+, result of the following command:
+```bash
+wikipedia2vec train --min-entity-count 0 --disambi --no-link-graph enwiki-20190701-pages-articles-multistream.xml.bz2 wikipedia2vec_trained 
+```
 
 To download all the auxilary files (Ranklib, DBpedia Entity V2 and the embeddings), please use the following command:
 
