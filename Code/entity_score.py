@@ -101,10 +101,6 @@ def to_print_format(queries, filepath):
 rerank_path = args.dbpedia_input
 rerank =  pd.read_csv(rerank_path, sep='\s+', names = ['query_id', 'x1', 'tag', 'rang', 'fsdm_score', 'x2'])
 
-
-# Loading the model with a Gensim keyedvector
-model = gensim.models.KeyedVectors.load(args.embedding, mmap='r')
-
 # Loading linked entities
 confidence = pd.read_csv("Data/linked_tagme.csv")
 
@@ -114,9 +110,11 @@ qrels = pd.read_csv(qrels_path, sep='\t',names = ['query_id', '', 'tag', 'rel'])
 queries_path = path_to_dbpedia + 'collection/v2/queries-v2.txt'
 queries = pd.read_csv(queries_path, sep='\t',names = ['query_id', 'query'])
 
-
 # Loading previously computed redirects
 df = pd.read_csv('Data/wikipedia_redirect.csv')
+
+# Loading the model with a Gensim keyedvector
+model = gensim.models.KeyedVectors.load(args.embedding, mmap='r')
 
 redirect_dict = {}
 for index, tags in df.iterrows():
