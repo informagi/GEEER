@@ -95,6 +95,8 @@ def to_print_format(queries, filepath):
             print(printstring, file = f)
     f.close()
 
+print("Loading auxilary files")
+
 # Loading the file to rerank
 # Note, if an error is given here when loading a different file to rerank, try changing the seperator to '\t'
 #rerank_path = path_to_dbpedia + 'runs/v2/bm25f-ca_v2.run'
@@ -113,6 +115,7 @@ queries = pd.read_csv(queries_path, sep='\t',names = ['query_id', 'query'])
 # Loading previously computed redirects
 df = pd.read_csv('Data/wikipedia_redirect.csv')
 
+print("Loading embeddings")
 # Loading the model with a Gensim keyedvector
 model = gensim.models.KeyedVectors.load(args.embedding, mmap='r')
 

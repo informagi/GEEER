@@ -95,6 +95,7 @@ def to_print_format(queries, filepath):
             print(printstring, file = f)
     f.close()
 
+print("Loading auxilary files")
 # Loading the file to rerank
 # Note, if an error is given here when loading a different file to rerank, try changing the seperator to '\t'
 rerank_path = args.dbpedia_input
@@ -118,6 +119,7 @@ folds_path = path_to_dbpedia + "/collection/v2/folds/all_queries.json"
 with open(folds_path, 'r') as read_file:
     data = json.load(read_file)
 
+print("Loading embeddings")
 # Loading the model with a Gensim keyedvector
 model = gensim.models.KeyedVectors.load(args.embedding, mmap='r')
 
