@@ -38,7 +38,7 @@ The embeddings can then be loaded in Python with Gensim:
 
 ```Python
 import gensim
-model = gensim.models.KeyedVectors.load(WKN-vectors.bin, mmap='r')
+model = gensim.models.KeyedVectors.load("WKN-vectors.bin", mmap='r')
 ```
 
 
