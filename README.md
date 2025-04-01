@@ -35,6 +35,13 @@ wikipedia2vec train --min-entity-count 0 --disambi --no-link-graph enwiki-201907
 
 The embeddings can then be loaded in Python with Gensim:
 
+Other embeddings can be downloaded here:
+
+[RDF2Vec with pagelinks](https://surfdrive.surf.nl/files/index.php/s/BDAL1Ha6OfjsJIM/download)
+[RDF2Vec without pagelinks](https://surfdrive.surf.nl/files/index.php/s/v7ZYR7c32hoOSJH/download)
+[ComPlex with pagelinks](https://surfdrive.surf.nl/files/index.php/s/w0x9BKNXwTYN5rG/download)
+[ComPlex without pagelinks](https://surfdrive.surf.nl/files/index.php/s/RMyTvH0xdFxwvC6/download)
+
 
 ```Python
 import gensim
