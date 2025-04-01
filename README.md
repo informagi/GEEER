@@ -10,8 +10,8 @@ Graph-Embedding Empowered Entity Retrieval, Emma Gerritse, Faegheh Hasibi and Ar
 This repository is structured in the following way:
 
 - `Code/` : Contains the code for computing scores (entity_score.py), a notebook for the visualisation (Embedding_quality.ipynb), and two scripts for scoring (rankscore.sh and ranklib_to_trec.py)
-- `Data/` : Contains the linked entities used and the wikipedia redirects used
-- `Runs/` : Contains all the runs used in the paper
+- `Data/` : Contains the linked entities used and the wikipedia redirects used, updated with more entity linking methods, and ground truth annotations 
+- `Runs/` : Contains all the runs used in the paper, updated with additional runs for other methods
 
 ## Requirements
 Running the code requires Python 3.
