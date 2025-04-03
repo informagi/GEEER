@@ -9,7 +9,7 @@ Graph-Embedding Empowered Entity Retrieval, Emma Gerritse, Faegheh Hasibi and Ar
 
 This repository is structured in the following way:
 
-- `Code/` : Contains the code for computing scores (entity_score.py), a notebook for the visualisation (Embedding_quality.ipynb), and two scripts for scoring (rankscore.sh and ranklib_to_trec.py)
+- `Code/` : Contains the code for computing scores (entity_score.py), a notebook for the visualisation (Embedding_quality.ipynb), and two scripts for scoring (rankscore.sh and ranklib_to_trec.py). It is updated with two additional notebooks, for ranking with the other graph embedding methods, and ranking with different scenarios. 
 - `Data/` : Contains the linked entities used and the wikipedia redirects used, updated with more entity linking methods, and ground truth annotations 
 - `Runs/` : Contains all the runs used in the paper, updated with additional runs for other methods
 
@@ -40,16 +40,19 @@ import gensim
 model = gensim.models.KeyedVectors.load("WKN-vectors.bin", mmap='r')
 ```
 
-Other embeddings can be downloaded here:
+Other embeddings can be downloaded here: 
 
-[RDF2Vec with pagelinks](https://surfdrive.surf.nl/files/index.php/s/BDAL1Ha6OfjsJIM/download)
+[RDF2Vec with pagelinks](https://surfdrive.surf.nl/files/index.php/s/KoQtCo9QW4lG4Mq/download)
 
-[RDF2Vec without pagelinks](https://surfdrive.surf.nl/files/index.php/s/v7ZYR7c32hoOSJH/download)
+[RDF2Vec without pagelinks](https://surfdrive.surf.nl/files/index.php/s/9YFKvrkBvXGrDIz/download)
 
-[ComPlex with pagelinks](https://surfdrive.surf.nl/files/index.php/s/w0x9BKNXwTYN5rG/download)
+[ComPlex with pagelinks](https://surfdrive.surf.nl/files/index.php/s/w0x9BKNXwTYN5rG/download) [KGE Graph files for ComPlex](https://surfdrive.surf.nl/files/index.php/s/vDGQbsws5iygLCo/download)
 
-[ComPlex without pagelinks](https://surfdrive.surf.nl/files/index.php/s/RMyTvH0xdFxwvC6/download)
+[ComPlex without pagelinks](https://surfdrive.surf.nl/files/index.php/s/RMyTvH0xdFxwvC6/download)  [KGE Graph files for ComPlex](https://surfdrive.surf.nl/files/index.php/s/9YFKvrkBvXGrDIz/download)
 
+[Wikipedia2Vec 500D trained on 2015](https://surfdrive.surf.nl/files/index.php/s/iHZgEGP4tPXOeGE/download)
+
+All these files need to be unzipped in the `/src` directory. 
 
 
 # Quickstart
