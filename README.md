@@ -69,6 +69,8 @@ To then reproduce the results, first make sure to install all the neccessary pac
 pip install -r requirements.txt
 ```
 
+If you want to run the ranking with ComplEx, it is first neccessary to install KGE. They do not have a pip install, so please follow the installation guide on [their official Github](https://github.com/uma-pi1/kge) 
+
 And then run
 
 ```bash
