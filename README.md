@@ -1,15 +1,7 @@
 # GEEER
-Code supporting the paper Graph-Embedding Empowered Entity Retrieval
-
-This repository contains resources developed within the following paper:
-
-```
-Graph-Embedding Empowered Entity Retrieval, Emma Gerritse, Faegheh Hasibi and Arjen de Vries
-```
-
 This repository is structured in the following way:
 
-- `Code/` : Contains the code for computing scores (entity_score.py), a notebook for the visualisation (Embedding_quality.ipynb), and two scripts for scoring (rankscore.sh and ranklib_to_trec.py). It is updated with two additional notebooks, for ranking with the other graph embedding methods, and ranking with different scenarios. 
+- `Code/` : Contains the code for computing scores (entity_score.py), a notebook for the visualisation (Embedding_quality.ipynb), and two scripts for scoring (rankscore.sh and ranklib_to_trec.py). It is updated with two additional notebooks for ranking with the other graph embedding methods and ranking with different scenarios.
 - `Data/` : Contains the linked entities used and the wikipedia redirects used, updated with more entity linking methods, and ground truth annotations 
 - `Runs/` : Contains all the runs used in the paper, updated with additional runs for other methods
 
@@ -79,7 +71,7 @@ bash Code/reproduce.sh
 
 The results will be stored in the folder /Output
 
-## Code for computing the embedding based score
+## Code for computing the embedding based score with Wikipedia2vec
 
 To compute just the embedding based score, use the following function:
 
@@ -90,6 +82,18 @@ python Code/entity_score.py embeddingfile outputfile [pathtodbpedia]
 ```bash
 python Code/entity_score.py src/WKN-vectors/WKN-vectors.bin output.txt src/DBpedia-Entity/runs/v2/bm25f-ca_v2.run
 ```
+## Code for computing the embedding based score with RDF2vec, Complex and old versions of Wikipedia2Vec
+
+Open the Jupyter Notebook called `score_multiple-embeddings-types.ipynb` in the `Code` directory. 
+In the first cell, please comment out the lines specifying the preferred version of embeddings and annotations, following the instructions written there.
+Then simply run all cells to reproduce the experiment. 
+
+## Code for computing the embedding based score with Scenario based annotations
+
+Open the Jupyter Notebook called `score_multiple-embedding-types-with-scenarios.ipynb` in the `Code` directory. 
+In the first cell, please comment out the lines specifying the preferred version of embeddings and annotations, following the instructions written there.
+Then simply run all cells to reproduce the experiment. 
+
 
 ## Code for scoring with Ranklib
 
