@@ -85,7 +85,9 @@ python Code/entity_score.py src/WKN-vectors/WKN-vectors.bin output.txt src/DBped
 ## Code for computing the embedding based score with RDF2vec, Complex and old versions of Wikipedia2Vec
 
 Open the Jupyter Notebook called `score_multiple-embeddings-types.ipynb` in the `Code` directory. 
+
 In the first cell, please comment out the lines specifying the preferred version of embeddings and annotations, following the instructions written there.
+
 Then simply run all cells to reproduce the experiment. 
 
 ## Code for computing the embedding based score with Scenario based annotations
