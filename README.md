@@ -91,8 +91,7 @@ Then simply run all cells to reproduce the experiment.
 ## Code for computing the embedding based score with Scenario based annotations
 
 Open the Jupyter Notebook called `score_multiple-embedding-types-with-scenarios.ipynb` in the `Code` directory. 
-In the first cell, please comment out the lines specifying the preferred version of embeddings and annotations, following the instructions written there.
-Then simply run all cells to reproduce the experiment. 
+Simply run all cells to reproduce the experiment. 
 
 
 ## Code for scoring with Ranklib
